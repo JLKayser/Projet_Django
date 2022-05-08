@@ -1,0 +1,12 @@
+{% extends "football/main.html" %}
+{% block title %}
+Football
+{% endblock %}
+{% block content %}
+<p> vous avez ajouté le club suivant : {{club}} | {{club.id}} </p>
+<p> liste des joueurs dans le club {{club}} : </p>
+{% for j in joueur %}
+<ul style="padding:0;">{{j.nom_joueur}}
+{% endfor %}
+</ul>
+{% endblock %}

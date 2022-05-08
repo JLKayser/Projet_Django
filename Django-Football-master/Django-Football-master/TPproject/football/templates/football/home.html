@@ -1,0 +1,11 @@
+{% extends "football/main.html" %}
+{% block title %}
+Football
+{% endblock %}
+{% block content %}
+<ul>
+ {% for l in liste %}
+     <li> {{l}} {{l.date_parution_club|date:"d/m/Y"}} <a href="affiche/{{l.id}}"> afficher les détails | </a> <a href="delete/{{l.id}}"> effacer | </a> <a href="update/{{l.id}}"> update </a></li>
+ {%endfor%}
+</ul>
+{% endblock %}
