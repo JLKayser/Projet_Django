@@ -10,7 +10,7 @@ Football
     {{j.nom_joueur}} né le {{j.date_naissance_joueur}} , origine de {{j.pays_joueur}} il a gagnée {{j.nombre_LDC}} ligue des champions.<br><br>
     Détail sur {{j.nom_joueur}} :
     {{j.resume}}
-     <a href="delete2/{{j.id}}"><button>Effacer</button></a> <a href="/update2/{{j.id}}"><button>Update</button></a></li>
+     <a href="/football/delete2/{{j.id}}"><button>Effacer</button></a> <a href="/football/update2/{{j.id}}"><button>Update</button></a></li>
 </ul>
 {% endfor %}
 {% endblock %}

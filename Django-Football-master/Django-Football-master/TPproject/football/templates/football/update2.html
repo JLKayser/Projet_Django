@@ -3,7 +3,7 @@
 Football
 {% endblock %}
 {% block content %}
-    <form method="post" action="/football/traitementupdate2/{{joueur.id}}/">
+    <form method="post" action="/football/traitementupdate2/{{id}}">
     {% csrf_token %}
     {{ form.as_ul }}
     <input type="submit" value="Send Data"/>

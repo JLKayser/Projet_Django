@@ -70,7 +70,7 @@ def update(request, id):
         club = cform.save()
         return HttpResponseRedirect("/football/")
     else:
-        return render(request, "football/update.html", {"form": cform})
+        return render(request, "football/update.html", {"form": cform, 'id': id})
 
 def update2(request, id):
     jform = JoueurForm(request.POST)
@@ -78,7 +78,7 @@ def update2(request, id):
         joueur = jform.save()
         return HttpResponseRedirect("/football/")
     else:
-        return render(request, "football/update2.html", {"form": jform})
+        return render(request, "football/update2.html", {"form": jform, 'id': id})
 
 def traitementupdate(request, id):
     cform = ClubForm(request.POST)
@@ -86,7 +86,7 @@ def traitementupdate(request, id):
         club = cform.save(commit=False)
         club.id = id
         club.save()
-        return HttpResponseRedirect("/football/")
+        return HttpResponseRedirect("/football")
     else:
         return render(request, "football/update.html", {"form": cform, "id": id})
 
@@ -96,6 +96,6 @@ def traitementupdate2(request, id):
         joueur = jform.save(commit=False)
         joueur.id = id
         joueur.save()
-        return HttpResponseRedirect("/football/")
+        return HttpResponseRedirect("/football")
     else:
         return render(request, "football/update2.html", {"form": jform, "id": id})
