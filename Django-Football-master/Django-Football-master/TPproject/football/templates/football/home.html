@@ -5,7 +5,7 @@ Football
 {% block content %}
 {% for l in liste %}
 <ul class="ul-list">
-     <li class="li-list"> {{l}} {{l.date_parution_club|date:"d/m/Y"}} <a href="affiche/{{l.id}}"><button>Afficher les détails</button></a> <a href="delete/{{l.id}}"><button>Effacer</button></a> <a href="update/{{l.id}}"><button>Update</button></a></li>
+     <li class="li-list"> Le club {{l}} a était crée en {{l.date_parution_club|date:"d/m/Y"}}<br>Le club se trouve en {{l.pays_club}}<br>Le club a gagné {{l.nombre_LDC}} ligue des champions<br>Détail sur {{l}} : {{l.resume}} <a href="affiche/{{l.id}}"><button>Afficher les détails</button></a> <a href="delete/{{l.id}}"><button>Effacer</button></a> <a href="update/{{l.id}}"><button>Update</button></a></li>
 </ul>
 {%endfor%}
 {% endblock %}
