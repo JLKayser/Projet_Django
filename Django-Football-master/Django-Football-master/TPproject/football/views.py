@@ -65,20 +65,14 @@ def delete2(request, id):
     return HttpResponseRedirect("/football/")
 
 def update(request, id):
-    cform = ClubForm(request.POST)
-    if cform.is_valid():
-        club = cform.save()
-        return HttpResponseRedirect("/football/")
-    else:
-        return render(request, "football/update.html", {"form": cform, 'id': id})
+    club = models.Club.objects.get(pk=id)
+    cform = ClubForm(club.dico())
+    return render(request, "football/update.html", {"form": cform, "id": id})
 
 def update2(request, id):
-    jform = JoueurForm(request.POST)
-    if jform.is_valid():
-        joueur = jform.save()
-        return HttpResponseRedirect("/football/")
-    else:
-        return render(request, "football/update2.html", {"form": jform, 'id': id})
+    joueur = models.Joueur.objects.get(pk=id)
+    jform = JoueurForm(joueur.dico())
+    return render(request, "football/update2.html", {"form": jform, "id": id})
 
 def traitementupdate(request, id):
     cform = ClubForm(request.POST)

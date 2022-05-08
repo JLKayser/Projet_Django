@@ -7,6 +7,7 @@ Football
 <h2> Liste des joueurs dans le club {{club}} : </h2>
 {% for j in joueur %}
 <ul class="ul-list">
+    <h1 style="margin-bottom:13px;">{{j.nom_joueur}}</h1>
     {{j.nom_joueur}} né le {{j.date_naissance_joueur}} , origine de {{j.pays_joueur}} il a gagnée {{j.nombre_LDC}} ligue des champions.<br><br>
     Détail sur {{j.nom_joueur}} :
     {{j.resume}}
