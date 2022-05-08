@@ -69,11 +69,16 @@ form > li{
     padding:7px;
 }
 
+li{
+    list-style-type:none;
+    padding:7px;
+}
+
 label{
     font-family:system-ui,arial;
 }
 
-input[type=submit]{
+input[type=submit],button{
     background:#2f4a28;
     font-family:system-ui,arial;
 }
@@ -97,6 +102,25 @@ img{
 
 img:hover{
     transform:rotate(1000deg)
+}
+
+.ul-list{
+    background-color:#6eaa5e;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+    margin-top:75px;
+    width:40vw;
+    border-radius:5px;
+    box-shadow:1px 1px 1px 1px #558549;
+}
+
+.ul-list > .li-list{
+    list-style-type:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 @media all and (max-width:650px){

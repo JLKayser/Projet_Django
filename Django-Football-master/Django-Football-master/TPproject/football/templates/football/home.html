@@ -3,9 +3,9 @@
 Football
 {% endblock %}
 {% block content %}
-<ul>
- {% for l in liste %}
-     <li> {{l}} {{l.date_parution_club|date:"d/m/Y"}} <a href="affiche/{{l.id}}"> afficher les détails | </a> <a href="delete/{{l.id}}"> effacer | </a> <a href="update/{{l.id}}"> update </a></li>
- {%endfor%}
+{% for l in liste %}
+<ul class="ul-list">
+     <li class="li-list"> {{l}} {{l.date_parution_club|date:"d/m/Y"}} <a href="affiche/{{l.id}}"><button>Afficher les détails</button></a> <a href="delete/{{l.id}}"><button>Effacer</button></a> <a href="update/{{l.id}}"><button>Update</button></a></li>
 </ul>
+{%endfor%}
 {% endblock %}

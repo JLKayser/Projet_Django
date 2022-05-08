@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from .forms import ClubForm, JoueurForm
 
 from . import  models
-# Create your views here.
+
 def ajout(request):
     if request.method == "POST":
         form = ClubForm(request)
@@ -84,7 +84,7 @@ def traitementupdate(request, id):
     cform = ClubForm(request.POST)
     if cform.is_valid():
         club = cform.save(commit=False)
-        club.id = id;
+        club.id = id
         club.save()
         return HttpResponseRedirect("/football/")
     else:
@@ -94,7 +94,7 @@ def traitementupdate2(request, id):
     jform = JoueurForm(request.POST)
     if jform.is_valid():
         joueur = jform.save(commit=False)
-        joueur.id = id;
+        joueur.id = id
         joueur.save()
         return HttpResponseRedirect("/football/")
     else:

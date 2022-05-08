@@ -3,10 +3,14 @@
 Football
 {% endblock %}
 {% block content %}
-<p> vous avez ajouté le club suivant : {{club}} | {{club.id}} </p>
-<p> liste des joueurs dans le club {{club}} : </p>
+<h2> Vous avez ajouté le club suivant : {{club}} | {{club.id}} </h2>
+<h2> Liste des joueurs dans le club {{club}} : </h2>
 {% for j in joueur %}
-<ul style="padding:0;">{{j.nom_joueur}}
-{% endfor %}
+<ul class="ul-list">
+    {{j.nom_joueur}} né le {{j.date_naissance_joueur}} , origine de {{j.pays_joueur}} il a gagnée {{j.nombre_LDC}} ligue des champions.<br><br>
+    Détail sur {{j.nom_joueur}} :
+    {{j.resume}}
+     <a href="delete2/{{j.id}}"><button>Effacer</button></a> <a href="update2/{{j.id}}"><button>Update</button></a></li>
 </ul>
+{% endfor %}
 {% endblock %}
